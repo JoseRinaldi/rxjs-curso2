@@ -12,17 +12,23 @@ const keyupCode$ = keyup$.pipe(
     map( event => event.code )
 );
 
-const keyupPluck$ = keyup$.pipe(
-    pluck('target', 'baseURI')
-);
+// const keyupPluck$ = keyup$.pipe(
+//     pluck('target', 'baseURI')
+// );
+// const keyupPluck$ = keyup$.pipe(
+//     map(x => x?.target.)
+// );
 
+// const keyupMapTo$ = keyup$.pipe(
+//     mapTo('Tecla presionada')
+// );
 const keyupMapTo$ = keyup$.pipe(
-    mapTo('Tecla presionada')
+    map( () => 'Tecla presionada')
 );
 
 
 keyup$.subscribe( console.log );
 keyupCode$.subscribe( code => console.log('map', code ) );
-keyupPluck$.subscribe( code => console.log('pluck', code ) );
+//keyupPluck$.subscribe( code => console.log('pluck', code ) );
 keyupMapTo$.subscribe( code => console.log('mapTo', code ) );
 
